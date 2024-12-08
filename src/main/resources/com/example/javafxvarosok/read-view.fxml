@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.javafxvarosok.ReadController">
+    <TableView fx:id="cityTable">
+        <columns>
+            <TableColumn fx:id="cityIdColumn" text="ID"/>
+            <TableColumn fx:id="cityNameColumn" text="Name"/>
+            <TableColumn fx:id="countyIdColumn" text="County ID"/>
+            <TableColumn fx:id="countySeatColumn" text="County Seat"/>
+            <TableColumn fx:id="countyAuthorityColumn" text="County Authority"/>
+        </columns>
+    </TableView>
+    <TableView fx:id="countyTable">
+        <columns>
+            <TableColumn fx:id="countyIdColumn2" text="ID"/>
+            <TableColumn fx:id="countyNameColumn" text="Name"/>
+        </columns>
+    </TableView>
+    <TableView fx:id="populationTable">
+        <columns>
+            <TableColumn fx:id="populationCityIdColumn" text="City ID"/>
+            <TableColumn fx:id="yearColumn" text="Year"/>
+            <TableColumn fx:id="femalesColumn" text="Females"/>
+            <TableColumn fx:id="totalColumn" text="Total"/>
+        </columns>
+    </TableView>
+</VBox>

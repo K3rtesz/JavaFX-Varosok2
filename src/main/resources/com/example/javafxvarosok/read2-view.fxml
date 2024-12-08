@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.javafxvarosok.Read2Controller"
+      spacing="20" alignment="CENTER">
+    <!-- Városok szűrése -->
+    <TitledPane text="Városok szűrése" expanded="false">
+        <VBox spacing="10" alignment="CENTER">
+            <HBox spacing="10">
+                <Label text="Név:"/>
+                <TextField fx:id="cityNameFilter"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Megye ID:"/>
+                <TextField fx:id="cityCountyIdFilter"/>
+            </HBox>
+            <Button text="Szűrés" fx:id="filterCityButton"/>
+            <TableView fx:id="cityTable">
+                <columns>
+                    <TableColumn fx:id="cityIdColumn" text="ID"/>
+                    <TableColumn fx:id="cityNameColumn" text="Név"/>
+                    <TableColumn fx:id="cityCountyIdColumn" text="Megye ID"/>
+                    <TableColumn fx:id="citySeatColumn" text="Megyeszékhely"/>
+                    <TableColumn fx:id="cityAuthorityColumn" text="Megyei jogú"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </TitledPane>
+
+    <!-- Megyék szűrése -->
+    <TitledPane text="Megyék szűrése" expanded="false">
+        <VBox spacing="10" alignment="CENTER">
+            <HBox spacing="10">
+                <Label text="Név:"/>
+                <TextField fx:id="countyNameFilter"/>
+            </HBox>
+            <Button text="Szűrés" fx:id="filterCountyButton"/>
+            <TableView fx:id="countyTable">
+                <columns>
+                    <TableColumn fx:id="countyIdColumn" text="ID"/>
+                    <TableColumn fx:id="countyNameColumn" text="Név"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </TitledPane>
+
+    <!-- Lélekszám szűrése -->
+    <TitledPane text="Lélekszám szűrése" expanded="false">
+        <VBox spacing="10" alignment="CENTER">
+            <HBox spacing="10">
+                <Label text="Város ID:"/>
+                <TextField fx:id="populationCityIdFilter"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Év:"/>
+                <TextField fx:id="populationYearFilter"/>
+            </HBox>
+            <Button text="Szűrés" fx:id="filterPopulationButton"/>
+            <TableView fx:id="populationTable">
+                <columns>
+                    <TableColumn fx:id="populationCityIdColumn" text="Város ID"/>
+                    <TableColumn fx:id="populationYearColumn" text="Év"/>
+                    <TableColumn fx:id="populationFemaleColumn" text="Nők száma"/>
+                    <TableColumn fx:id="populationTotalColumn" text="Összesen"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </TitledPane>
+</VBox>
+

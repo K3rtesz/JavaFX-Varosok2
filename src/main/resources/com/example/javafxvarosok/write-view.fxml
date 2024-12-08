@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane xmlns="http://javafx.com/javafx/11.0.1"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.example.javafxvarosok.WriteController">
+    <tabs>
+        <!-- Város -->
+        <Tab text="Város">
+            <GridPane alignment="CENTER" hgap="10" vgap="10">
+                <Label text="Név:"/>
+                <TextField fx:id="cityNameField" GridPane.columnIndex="1"/>
+
+                <Label text="Megye ID:" GridPane.rowIndex="1"/>
+                <TextField fx:id="cityCountyIdField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Megyeszékhely?" GridPane.rowIndex="2"/>
+                <CheckBox fx:id="cityCountySeatBox" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Megyei jogú?" GridPane.rowIndex="3"/>
+                <CheckBox fx:id="cityCountyAuthorityBox" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Button text="Hozzáadás" fx:id="addCityButton" GridPane.rowIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+            </GridPane>
+        </Tab>
+
+        <!-- Megye -->
+        <Tab text="Megye">
+            <GridPane alignment="CENTER" hgap="10" vgap="10">
+                <Label text="Név:"/>
+                <TextField fx:id="countyNameField" GridPane.columnIndex="1"/>
+
+                <Button text="Hozzáadás" fx:id="addCountyButton" GridPane.rowIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+            </GridPane>
+        </Tab>
+
+        <!-- Lélekszám -->
+        <Tab text="Lélekszám">
+            <GridPane alignment="CENTER" hgap="10" vgap="10">
+                <Label text="Város ID:"/>
+                <TextField fx:id="populationCityIdField" GridPane.columnIndex="1"/>
+
+                <Label text="Év:" GridPane.rowIndex="1"/>
+                <TextField fx:id="populationYearField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Nők száma:" GridPane.rowIndex="2"/>
+                <TextField fx:id="populationFemaleField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Összesen:" GridPane.rowIndex="3"/>
+                <TextField fx:id="populationTotalField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Button text="Hozzáadás" fx:id="addPopulationButton" GridPane.rowIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+            </GridPane>
+        </Tab>
+    </tabs>
+</TabPane>
+
