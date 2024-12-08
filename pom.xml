@@ -16,9 +16,30 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.oanda</groupId>
+            <artifactId>v20-java</artifactId>
+            <version>3.0.25</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/v20-3.0.25.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.42.0.0</version>
+        </dependency>
+        <!-- SOAP klienshez szükséges függőség -->
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>2.3.2</version>
         </dependency>
 
         <dependency>
@@ -48,6 +69,25 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wsdlUrls>
+                        <wsdlUrl>${project.basedir}/src/main/resources/mnb.wsdl</wsdlUrl>
+                    </wsdlUrls>
+                    <packageName>soapclient</packageName>
+                    <sourceDestDir>src/main/java</sourceDestDir>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

@@ -99,6 +99,49 @@ public class Main extends Application {
             }
         });
 
+        /*Menu soapMenu = new Menu("SOAP kliens");
+        MenuItem downloadMenuItem = new MenuItem("Letöltés");
+        soapMenu.getItems().add(downloadMenuItem);
+
+        downloadMenuItem.setOnAction(e -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/javafxvarosok/soap-download-view.fxml"));
+                Parent newRoot = loader.load();
+                Stage stage = new Stage();
+                stage.setTitle("SOAP árfolyam letöltés");
+                stage.setScene(new Scene(newRoot));
+                stage.show();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        menuBar.getMenus().add(soapMenu);
+    */
+
+        Menu parallelMenu = new Menu("Párhuzamos");
+        MenuItem parallelTaskMenuItem = new MenuItem("Párhuzamos feladatok");
+        parallelMenu.getItems().add(parallelTaskMenuItem);
+
+        parallelTaskMenuItem.setOnAction(e -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/javafxvarosok/parallel-view.fxml"));
+                Parent newRoot = loader.load();
+                Stage stage = new Stage();
+                stage.setTitle("Párhuzamos programvégrehajtás");
+                stage.setScene(new Scene(newRoot));
+                stage.show();
+
+                // Alkalmazás bezárásakor a szálakat megszakítjuk
+                ParallelController controller = loader.getController();
+                stage.setOnCloseRequest(event -> controller.shutdown());
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        menuBar.getMenus().add(parallelMenu);
+
 
 
     }

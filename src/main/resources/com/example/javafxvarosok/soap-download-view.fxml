@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.javafxvarosok.SoapDownloadController"
+      alignment="CENTER" spacing="20">
+    <Label text="SOAP árfolyam letöltése"/>
+    <Button text="Összes árfolyam letöltése" fx:id="downloadAllButton"/>
+    <HBox spacing="10">
+        <Label text="Kezdő dátum (YYYY-MM-DD):"/>
+        <TextField fx:id="startDateField"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Záró dátum (YYYY-MM-DD):"/>
+        <TextField fx:id="endDateField"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Valuta:"/>
+        <TextField fx:id="currencyField"/>
+    </HBox>
+    <Button text="Szűrt árfolyam letöltése" fx:id="downloadFilteredButton"/>
+</VBox>
+

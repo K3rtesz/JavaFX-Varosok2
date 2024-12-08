@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.javafxvarosok.ParallelController"
+      alignment="CENTER" spacing="20">
+    <Label text="Párhuzamos programvégrehajtás" style="-fx-font-size: 18px;"/>
+
+    <!-- Időzített szövegek -->
+    <HBox spacing="20" alignment="CENTER">
+        <VBox>
+            <Label text="1 másodperces Label:"/>
+            <Label fx:id="label1" text="Várakozás..."/>
+        </VBox>
+        <VBox>
+            <Label text="2 másodperces Label:"/>
+            <Label fx:id="label2" text="Várakozás..."/>
+        </VBox>
+    </HBox>
+
+    <!-- Gomb a párhuzamos feladatok indításához -->
+    <Button text="Indítás" fx:id="startButton"/>
+</VBox>
+
