@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.javafxvarosok.AccountInfoController"
+      spacing="10" alignment="CENTER">
+    <Label text="Számlainformációk" />
+    <TextArea fx:id="accountInfoText" prefHeight="200" prefWidth="400" editable="false" />
+    <Button text="Lekérdezés" onAction="#loadAccountInfo" />
+</VBox>

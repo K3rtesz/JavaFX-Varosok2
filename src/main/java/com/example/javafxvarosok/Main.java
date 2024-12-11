@@ -9,8 +9,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class Main extends Application {
     @Override
@@ -99,25 +97,6 @@ public class Main extends Application {
             }
         });
 
-        /*Menu soapMenu = new Menu("SOAP kliens");
-        MenuItem downloadMenuItem = new MenuItem("Letöltés");
-        soapMenu.getItems().add(downloadMenuItem);
-
-        downloadMenuItem.setOnAction(e -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/javafxvarosok/soap-download-view.fxml"));
-                Parent newRoot = loader.load();
-                Stage stage = new Stage();
-                stage.setTitle("SOAP árfolyam letöltés");
-                stage.setScene(new Scene(newRoot));
-                stage.show();
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        });
-
-        menuBar.getMenus().add(soapMenu);
-    */
 
         Menu parallelMenu = new Menu("Párhuzamos");
         MenuItem parallelTaskMenuItem = new MenuItem("Párhuzamos feladatok");
@@ -143,6 +122,51 @@ public class Main extends Application {
         menuBar.getMenus().add(parallelMenu);
 
 
+        Menu forexMenu = new Menu("Forex");
+        MenuItem accountInfoMenu = new MenuItem("Számlainformációk");
+        MenuItem currentPriceMenu = new MenuItem("Aktuális árak");
+        MenuItem historicalPricesMenu = new MenuItem("Historikus árak");
+        MenuItem openPositionMenu = new MenuItem("Pozíció nyitás");
+        MenuItem closePositionMenu = new MenuItem("Pozíció zárás");
+        MenuItem openPositionsMenu = new MenuItem("Nyitott pozíciók");
+        forexMenu.getItems().addAll(
+                accountInfoMenu,
+                currentPriceMenu,
+                historicalPricesMenu,
+                openPositionMenu,
+                closePositionMenu,
+                openPositionsMenu
+        );
+        accountInfoMenu.setOnAction(event -> {
+            AccountInfoController controller = new AccountInfoController();
+            controller.showInMainView(root);
+        });
+        currentPriceMenu.setOnAction(event -> {
+            PricePollingController controller = new PricePollingController();
+            controller.showInMainView(root);
+        });
+
+        historicalPricesMenu.setOnAction(event -> {
+            HistoricalPricesController controller = new HistoricalPricesController();
+            controller.showInMainView(root);
+        });
+
+        openPositionMenu.setOnAction(event -> {
+            OpenPositionController controller = new OpenPositionController();
+            controller.showInMainView(root);
+        });
+
+        closePositionMenu.setOnAction(event -> {
+            ClosePositionController controller = new ClosePositionController();
+            controller.showInMainView(root);
+        });
+
+        openPositionsMenu.setOnAction(event -> {
+            OpenPositionsController controller = new OpenPositionsController();
+            controller.showInMainView(root);
+        });
+
+        menuBar.getMenus().add(forexMenu);
 
     }
 
